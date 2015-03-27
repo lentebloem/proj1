@@ -4,7 +4,7 @@ class CreatePokemons < ActiveRecord::Migration
       t.string :name
       t.integer :level
       t.integer :trainer_id
-
+      
       t.timestamps
     end
   end
