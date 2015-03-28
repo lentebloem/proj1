@@ -5,14 +5,20 @@
 <table border="1">
 	<tbody>
 		<tr>
+			<td>id</td>
 			<td>pokemon</td>
 			<td>level</td>
+			<td>health</td>
+			<td>action</td>
 		</tr>
 	<% pokemons = Pokemon.where(trainer:current_trainer)%>
 	    <% pokemons.each do |pokemon| %>
 	    <tr>
+	    	<td><%= pokemon.id %></td>
 	      <td><%= pokemon.name %></td>
-	     <td><%= pokemon.level %></td> 
+	     <td><%= pokemon.level %></td>
+	     <td><%= pokemon.health %></td> 
+	   	<td> <%= button_to "Damage!", damage_path(trainer: @trainer, pid: pokemon.id), :class => "button medium", :method => :POST %></td>
 	    </tr>
   	<% end %>
 	</tbody>
