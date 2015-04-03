@@ -1,0 +1,30 @@
+0
+
+That is because I haven't created a Pokemon model yet.
+
+
+1
+
+In home_controller.rb, it gathers all pokemons with no trainer first. Then, it chooses a sample among the trainer-less pokemons, which is a default random method provided by rails. The common factor is that their trainer property is nil - they are all trainer-less.
+
+
+
+2a
+
+After we patch "capture", it will call capture method in pokemons_controller, as written in routes.rb. Then, the id of the current trainer-less pokemon is passed as a parameter. Then, capture method will update the current pokemon's trainer information, so that the current pokemon is captured by current trainer.
+
+
+
+3
+
+Trincral
+
+
+
+4
+
+It is a path that takes in trainer's id.
+
+
+
+

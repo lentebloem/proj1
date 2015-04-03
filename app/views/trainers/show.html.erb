@@ -1,7 +1,9 @@
 <h3>Trainer</h3>
 <p>Name: <%= @trainer.name if @trainer.name %></p>
 <p>Email: <%= @trainer.email if @trainer.email %></p>
-
+ <% if @trainer == current_trainer %>
+ <%= link_to "Create a new pokemon!", pokemons_new_path(trainer: @trainer), :class => "button medium" %>
+<% end %>
 <table border="1">
 	<tbody>
 		<tr>
@@ -11,7 +13,7 @@
 			<td>health</td>
 			<td>action</td>
 		</tr>
-	<% pokemons = Pokemon.where(trainer:current_trainer)%>
+	<% pokemons = Pokemon.where(trainer: @trainer)%>
 	    <% pokemons.each do |pokemon| %>
 	    <tr>
 	    	<td><%= pokemon.id %></td>
